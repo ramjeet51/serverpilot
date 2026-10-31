@@ -1,0 +1,16 @@
+[Unit]
+Description=ServerPilot agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/serverpilot-agent
+ExecStart=/usr/bin/python3 /opt/serverpilot-agent/agent.py
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

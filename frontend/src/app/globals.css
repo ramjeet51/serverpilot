@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-signal: var(--signal);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+}
+
+:root {
+  --background: #0c1210;
+  --foreground: #e8f0ea;
+  --card: #141c19;
+  --muted: #1c2823;
+  --muted-foreground: #93a39a;
+  --border: rgba(232, 240, 234, 0.1);
+  --accent: #e0a15a;
+  --accent-foreground: #1a1208;
+  --signal: #3dbe9a;
+  --danger: #ef6f6c;
+  --warning: #e0a15a;
+  color-scheme: dark;
+}
+
+* { border-color: var(--border); }
+
+html, body { min-height: 100%; }
+
+body {
+  background:
+    radial-gradient(1200px 500px at 80% -10%, rgba(224, 161, 90, 0.14), transparent 55%),
+    radial-gradient(900px 400px at -10% 20%, rgba(61, 190, 154, 0.1), transparent 50%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection { background: rgba(224, 161, 90, 0.35); }
+
+.font-display { font-family: var(--font-display); }
+
+.panel {
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(rgba(232, 240, 234, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 240, 234, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
